@@ -99,11 +99,22 @@ alias ga='cd ~/Documents/code/python/MidiRoute' # most used shortcut
 alias gc='cd ~/Documents/code/'
 alias go='cd'
 
-# Mount Network Drive WSL
-alias usbmount='sudo mount --mkdir -o uid=1000,gid=1000'
-alias mountwsl='sudo mkdir -p /mnt/z; sudo mount -t drvfs "\\192.168.1.5\sambashare" /mnt/z'
-alias mountarch='sudo mount --mkdir -t cifs //192.168.1.5/sambashare /mnt/z -o username=mitch,password='
-alias addGithubKey='mkdir -p ~/.ssh; cp /mnt/z/github/id_ed25519 ~/.ssh/.; sudo chmod 400 ~/.ssh/id_ed25519; eval $(ssh-agent -s); ssh-add ~/.ssh/id_ed25519'
+## Mount Stuff
+# argument drive and mount location
+# example: mount_usb /dev/sda1 /mnt/usb
+alias mount_usb='sudo mount --mkdir -o uid=1000,gid=1000'
+alias addGithubKey='mkdir -p ~/.ssh; cp /mnt/intstorage/github/id_ed25519 ~/.ssh/.; sudo chmod 400 ~/.ssh/id_ed25519; eval $(ssh-agent -s); ssh-add ~/.ssh/id_ed25519'
+
+# argument password
+# example: mount_intstorage <password>
+mount_intstorage() {
+  sudo mount --mkdir -t cifs -o uid=1000,gid=1000,username=mitch,password=$1 //192.168.1.5/sambashare /mnt/intstorage
+}
+mount_extstorage() {
+  sudo mount --mkdir -t cifs -o uid=1000,gid=1000,username=mitch,password=$1 //192.168.1.3/sambashare /mnt/extstorage
+}
+alias mount_intstorage_windows='sudo mkdir -p /mnt/intstorage; sudo mount -t drvfs "\\192.168.1.5\sambashare" /mnt/intstorage'
+alias mount_extstorage_windows='sudo mkdir -p /mnt/extstorage; sudo mount -t drvfs "\\192.168.1.3\sambashare" /mnt/extstorage'
 
 # FZF
 alias gpp='cd $(find . -type d | fzf)'
@@ -116,8 +127,8 @@ alias ss='source ~/.zshrc'
 
 # Edits
 alias ee='vim $DOTFILES_PATH/UserNotes.md'
-alias ea='vim $HOME/.config/zsh'
-alias es='vim $HOME/.config/nvim/'
+alias ea='vim $HOME/.config/home-manager/dotfiles/zsh'
+alias es='vim $HOME/.config/home-manager/dotfilesnvim/'
 
 # TMUX
 alias ta='tmux attach -t'
