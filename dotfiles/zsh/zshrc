@@ -13,6 +13,13 @@ if [ ! -e "$HOME/.local/share/nvim/plugins/vim-plug" ]; then
   git clone https://github.com/junegunn/vim-plug.git "$HOME/.local/share/nvim/plugins/vim-plug"
 fi
 
+# Make sure we have /bin/bash set (for nixos)
+if [ ! -e "/bin/bash" ]; then
+  echo "--> no /bin/bash detected! Adding symlink.."
+  sudo ln -s "$(which bash)" "/bin/bash"
+fi
+
+
 # load modules
 if [ -e "$HOME/.zshrc_modules" ]; then
   source "$HOME/.zshrc_modules"
