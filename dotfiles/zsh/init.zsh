@@ -2,11 +2,11 @@
 # ENVIRONMENT
 ################################################################################
 ## export ZDOTDIR="$HOME/.config/zsh" # move dotfiles to .config
-export ZSH_HOME_PATH="$HOME/.config/zsh"
+# export ZSH_HOME_PATH="$HOME/.config/zsh"
 export VISUAL="nvim" # default visual 
 export EDITOR="$VISUAL" # default editor
 
-export DOTFILES_PATH="$HOME/bin/dotfiles" # custom dotfiles path
+export DOTFILES_PATH="$HOME/.config/home-manager/dotfiles" # custom dotfiles path
 export PATH="$DOTFILES_PATH/bin:$PATH"    # add dotfiles bin to path
 
 export PLUGIN_PATH="$HOME/.local/share/zsh/plugins"
