@@ -3,8 +3,14 @@
 ################################################################################
 source "$HOME/.config/home-manager/dotfiles/zsh/init.zsh"
 
+# Make sure we have zshrc_modules dotfiles copied
 if [ ! -e "$HOME/.zshrc_modules" ]; then
   cp "$HOME/.config/home-manager/dotfiles/zsh/zshrc_modules" "$HOME/.zshrc_modules"
+fi
+
+# Make sure we have vimplug installed
+if [ ! -e "$HOME/.local/share/nvim/plugins/vim-plug" ]; then
+  git clone https://github.com/junegunn/vim-plug.git "$HOME/.local/share/nvim/plugins/vim-plug"
 fi
 
 # load modules
