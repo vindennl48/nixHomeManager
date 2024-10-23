@@ -26,12 +26,12 @@
         # to pass through arguments to home.nix
       };
 
-      homeConfigurations."hypervisor" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."nixhyper" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./hypervisor.nix ];
+        modules = [ ./nixhyper.nix ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix

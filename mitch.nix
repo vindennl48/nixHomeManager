@@ -17,6 +17,10 @@ rec {
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    neovim gcc nodejs yarn xclip
+    fzf
+    alacritty
+    vlc
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -65,7 +69,7 @@ rec {
   #  /etc/profiles/per-user/mitch/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    # EDITOR = "neovim"; # set in our zsh dotfiles
   };
 
   # Let Home Manager install and manage itself.
