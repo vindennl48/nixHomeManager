@@ -16,7 +16,7 @@ rec {
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     neovim gcc nodejs yarn xclip
     fzf
     alacritty
@@ -45,7 +45,7 @@ rec {
     ".config/nvim".source = ./dotfiles/nvim;
     ".zshrc".source = ./dotfiles/zsh/zshrc;
     ".config/alacritty".source = ./dotfiles/alacritty;
-    ".config/looking-glass/client.ini".source = ./dotfiles/looking-glass.ini
+    ".config/looking-glass/client.ini".source = ./dotfiles/looking-glass.ini;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
