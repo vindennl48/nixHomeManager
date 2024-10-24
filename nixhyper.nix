@@ -20,7 +20,7 @@ rec {
     neovim gcc nodejs yarn xclip
     fzf
     alacritty
-    # vlc
+    vlc
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

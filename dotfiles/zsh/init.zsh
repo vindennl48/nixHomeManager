@@ -21,8 +21,8 @@ export PATH="/usr/local/opt/llvm/bin/:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## HISTORY ##
-bindkey "^[[A" history-search-backward
-bindkey "^[[B" history-search-forward
+bindkey "${terminfo[kcuu1]}" history-search-backward
+bindkey "${terminfo[kcud1]}" history-search-forward
 
 ################################################################################
 # FUNCTIONS
