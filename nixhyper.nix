@@ -21,6 +21,7 @@ rec {
     fzf
     alacritty
     vlc
+    # lua-language-server # needs to be installed on nixos
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
