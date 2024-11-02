@@ -26,8 +26,7 @@ Plug('catppuccin/nvim', { ['as'] = 'catppuccin' }) -- cool color scheme
 Plug 'christoomey/vim-tmux-navigator' -- switch between tmux and vim
 Plug 'tmux-plugins/vim-tmux' -- additional tools to deal with tmux
 Plug 'tpope/vim-repeat' -- repeat plugin commands
-Plug 'junegunn/fzf.vim' -- fuzzy finder
-  Plug 'junegunn/fzf' -- dependency
+Plug('junegunn/fzf.vim', { ['commit'] = '279e1ec068f526e985ee7e3f62a71f083bbe0196' }) -- fuzzy finder
 Plug 'scrooloose/nerdtree' -- filetree
 Plug 'scrooloose/nerdcommenter' -- easy commenting
 Plug 'phaazon/hop.nvim' -- quick jump to another char
@@ -37,10 +36,9 @@ Plug 'jakemason/ouroboros' -- switch between h and c/cpp file pairs
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' }) -- so plugins can understand code context
 Plug 'echasnovski/mini.nvim' -- a plugin manager, see settings file
 Plug('lukas-reineke/indent-blankline.nvim', { ['commit'] = '9637670896b68805430e2f72cf5d16be5b97a22a' }) -- colorful indents
--- Plug('neoclide/coc.nvim', { ['do'] = 'yarn install --frozen-lockfile' }) -- code completion
 Plug('neoclide/coc.nvim', { ['branch'] = 'release' }) -- code completion
 Plug 'stevearc/oil.nvim' -- file explorer
-Plug 'Exafunction/codeium.vim' -- AI autocomplete
+-- Plug 'Exafunction/codeium.vim' -- AI autocomplete
 
 call('plug#end')
 require('plugins_lua') -- plugin settings in lua
