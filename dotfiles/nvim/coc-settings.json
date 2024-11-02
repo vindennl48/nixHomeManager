@@ -11,6 +11,13 @@
       }
     }
   },
+  "inlayHint.enable": false,
   "sumneko-lua.enableNvimLuaDev": true,
-  "inlayHint.enable": false
+  "Lua.misc.parameters": [
+    "--metapath",
+    "~/.cache/sumneko_lua/meta",
+    "--logpath",
+    "~/.cache/sumneko_lua/log"
+  ],
+  "sumneko-lua.serverDir": "/run/current-system/sw/share/lua-language-server"
 }
