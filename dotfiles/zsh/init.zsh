@@ -93,6 +93,13 @@ alias cp='cp -i'
 alias cpqcow='cp -i --sparse=always'
 alias hdsize='df -H'
 
+# Nix Specific
+alias nix_boot='nh os boot ~/MyNix/flake.nix'
+alias nix_switch='nh os switch ~/MyNix/flake.nix'
+alias nix_home='home-manager switch --flake ~/.config/home-manager/flake.nix'
+alias nix_edit_os='cd ~/MyNix; vim'
+alias nix_edit_home='cd ~/.config/home-manager; vim'
+
 # Locations
 # alias lof='cd /Users/mitch/Documents/Code/Python/LOFUpload; python3 main.py'
 alias ga='cd ~/Documents/code/python/MidiRoute' # most used shortcut
