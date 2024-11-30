@@ -119,7 +119,7 @@ nix_switch() {
 
 nix_clean() {
   if [[ "$(sysctl -n machdep.cpu.brand_string 2>/dev/null)" == *"Apple"* ]]; then
-    sudo nix-collect-garbage --delete-old; sudo nix-collect-garbage -d; nix-collect-garbage --delete-old; nix-collect-garbage -d
+    sudo nix-collect-garbage --delete-old; sudo nix-collect-garbage -d; nix-collect-garbage --delete-old; nix-collect-garbage -d; brew cleanup -s
   else
     nix-collect-garbage --delete-old; sudo nix-collect-garbage -d; sudo /run/current-system/bin/switch-to-configuration boot
   fi
