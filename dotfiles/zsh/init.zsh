@@ -18,17 +18,26 @@ export PYTHONDONTWRITEBYTECODE=1 # Stop python from creating pyc files
 export PATH="/usr/local/opt/llvm/bin/:$PATH"
 
 ## FZF ##
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-## FZF FOR MACNIX ##
-if [ -n "${commands[fzf-share]}" ]; then
-  source "$(fzf-share)/key-bindings.zsh"
-  source "$(fzf-share)/completion.zsh"
+if [[ "$(sysctl -n machdep.cpu.brand_string 2>/dev/null)" == *"Apple"* ]]; then
+  ## FZF FOR MACNIX ##
+  if [ -n "${commands[fzf-share]}" ]; then
+    source "$(fzf-share)/key-bindings.zsh"
+    source "$(fzf-share)/completion.zsh"
+  fi
+else
+  ## FZF ##
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fi
 
 ## HISTORY ##
-bindkey "${terminfo[kcuu1]}" history-search-backward
-bindkey "${terminfo[kcud1]}" history-search-forward
+if [[ "$(sysctl -n machdep.cpu.brand_string 2>/dev/null)" == *"Apple"* ]]; then
+  ## FOR MACNIX ##
+  bindkey "^[[A" history-search-backward
+  bindkey "^[[B" history-search-forward
+else
+  bindkey "${terminfo[kcuu1]}" history-search-backward
+  bindkey "${terminfo[kcud1]}" history-search-forward
+fi
 
 ################################################################################
 # FUNCTIONS
@@ -101,10 +110,18 @@ alias hdsize='df -H'
 
 # Nix Specific
 alias nix_boot='nh os boot ~/MyNix/flake.nix'
-alias nix_switch='nh os switch ~/MyNix/flake.nix'
-alias nix_home='home-manager switch --flake ~/.config/home-manager/flake.nix'
+# alias nix_switch='nh os switch ~/MyNix/flake.nix'
+alias nix_home='home-manager switch --flake ~/.config/home-manager'
 alias nix_edit_os='cd ~/MyNix; vim'
 alias nix_edit_home='cd ~/.config/home-manager; vim'
+
+nix_switch() {
+  if [[ "$(sysctl -n machdep.cpu.brand_string 2>/dev/null)" == *"Apple"* ]]; then
+    darwin-rebuild switch --flake ~/MyNix
+  else
+    nh os switch ~/MyNix
+  fi
+}
 
 # Locations
 # alias lof='cd /Users/mitch/Documents/Code/Python/LOFUpload; python3 main.py'
