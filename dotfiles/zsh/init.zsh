@@ -123,6 +123,14 @@ nix_switch() {
   fi
 }
 
+nix_clean() {
+  if [[ "$(sysctl -n machdep.cpu.brand_string 2>/dev/null)" == *"Apple"* ]]; then
+    sudo nix-collect-garbage --delete-old; sudo nix-collect-garbage -d; nix-collect-garbage --delete-old; nix-collect-garbage -d
+  else
+    nix-collect-garbage --delete-old; sudo nix-collect-garbage -d; sudo /run/current-system/bin/switch-to-configuration boot
+  fi
+}
+
 # Locations
 # alias lof='cd /Users/mitch/Documents/Code/Python/LOFUpload; python3 main.py'
 alias ga='cd ~/Documents/code/python/MidiRoute' # most used shortcut
