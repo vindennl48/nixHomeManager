@@ -13,14 +13,16 @@
   outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs   = nixpkgs.legacyPackages.${system};
+
+      pkgsDarwin = nixpkgs.legacyPackages."aarch64-darwin";
     in {
-      homeConfigurations."mitch" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."mitchh" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./mitch.nix ];
+        modules = [ ./hosts/mitch.nix ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
@@ -31,7 +33,18 @@
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./nixhyper.nix ];
+        modules = [ ./hosts/nixhyper.nix ];
+
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
+      };
+
+      homeConfigurations."mitch" = home-manager.lib.homeManagerConfiguration {
+        pkgs = pkgsDarwin;
+
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [ ./hosts/macnix.nix ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix

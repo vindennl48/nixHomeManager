@@ -20,6 +20,12 @@ export PATH="/usr/local/opt/llvm/bin/:$PATH"
 ## FZF ##
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+## FZF FOR MACNIX ##
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+fi
+
 ## HISTORY ##
 bindkey "${terminfo[kcuu1]}" history-search-backward
 bindkey "${terminfo[kcud1]}" history-search-forward

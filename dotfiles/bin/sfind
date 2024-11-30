@@ -8,7 +8,7 @@ fi
 
 # Check if the required number of arguments were provided
 if [ $# -lt 3 ]; then
-  echo "Usage: $0 search_dir search_pattern search_type"
+  echo "Usage: search_dir search_pattern search_type"
   echo "search_type: -f for files, -d for directories"
   exit 1
 fi
