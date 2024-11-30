@@ -33,6 +33,8 @@ rec {
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
+    (nerdfonts.override { fonts = [ "RobotoMono" "FiraCode" "DroidSansMono" "IBMPlexMono" ]; })
+
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -42,11 +44,11 @@ rec {
   ];
 
   home.file = {
-    ".gitconfig".source = ./dotfiles/gitconfig;
-    ".config/nvim".source = ./dotfiles/nvim;
-    ".zshrc".source = ./dotfiles/zsh/zshrc;
-    ".config/alacritty".source = ./dotfiles/alacritty;
-    ".config/looking-glass/client.ini".source = ./dotfiles/looking-glass.ini;
+    ".gitconfig".source                       = ../dotfiles/gitconfig;
+    ".config/nvim".source                     = ../dotfiles/nvim;
+    ".zshrc".source                           = ../dotfiles/zsh/zshrc;
+    ".config/alacritty".source                = ../dotfiles/alacritty;
+    ".config/looking-glass/client.ini".source = ../dotfiles/looking-glass.ini;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
