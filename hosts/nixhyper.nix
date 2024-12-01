@@ -20,8 +20,10 @@ rec {
     neovim gcc nodejs yarn xclip
     tmux
     alacritty
-    # fzf
-    # zsh
+    vlc
+    # lua-language-server # needs to be installed on nixos
+    # fzf # set below with programs.fzf
+    # zsh # set below with programs.zsh
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -46,6 +48,11 @@ rec {
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
+    # need to also set this in .zshrc
+    # if [ -n "${commands[fzf-share]}" ]; then
+    #   source "$(fzf-share)/key-bindings.zsh"
+    #   source "$(fzf-share)/completion.zsh"
+    # fi
   };
 
   programs.zsh = {
@@ -56,11 +63,12 @@ rec {
   };
 
   home.file = {
-    ".gitconfig".source        = ../dotfiles/gitconfig;
-    ".config/nvim".source      = ../dotfiles/nvim;
-    ".zshrc".source            = ../dotfiles/zsh/zshrc;
-    ".config/alacritty".source = ../dotfiles/alacritty;
-    ".config/tmux".source      = ../dotfiles/tmux;
+    ".gitconfig".source                       = ../dotfiles/gitconfig;
+    ".config/nvim".source                     = ../dotfiles/nvim;
+    ".zshrc".source                           = ../dotfiles/zsh/zshrc;
+    ".config/alacritty".source                = ../dotfiles/alacritty;
+    ".config/tmux".source                     = ../dotfiles/tmux;
+    ".config/looking-glass/client.ini".source = ../dotfiles/looking-glass.ini;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
