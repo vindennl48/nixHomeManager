@@ -1,8 +1,11 @@
 --[[
 When reloading, to install all of the COC packages, you need to make a sim-link
 from coc-packages.json to ~/.config/coc/extensions/package.json
-
 Then you need to run npm install in ~/.config/coc/extensions/
+
+For setting up C++ linting for JUCE, copy ccls file to root of the JUCE program
+make sure to rename to .ccls instead of ccls
+needs to be in the same directory as the .gitignore and *.jucer files
 ]]--
 
 local g    = vim.g
