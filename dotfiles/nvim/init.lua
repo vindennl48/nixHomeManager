@@ -36,7 +36,7 @@ Plug 'phaazon/hop.nvim' -- quick jump to another char
 Plug 'kwkarlwang/bufresize.nvim' -- keep vim buffers the same sz during term resize
 Plug 'jakemason/ouroboros' -- switch between h and c/cpp file pairs
   Plug 'nvim-lua/plenary.nvim' -- dependency of ouroboros
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' }) -- so plugins can understand code context
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate', ['commit'] = '707e352df6d737e545e1a7204f7395ba82e6d2d3' }) -- so plugins can understand code context
 Plug 'echasnovski/mini.nvim' -- a plugin manager, see settings file
 Plug('lukas-reineke/indent-blankline.nvim', { ['commit'] = '9637670896b68805430e2f72cf5d16be5b97a22a' }) -- colorful indents
 Plug('neoclide/coc.nvim', { ['branch'] = 'release' }) -- code completion
