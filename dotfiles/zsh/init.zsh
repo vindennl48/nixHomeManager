@@ -127,7 +127,7 @@ nix_clean() {
 
 # Locations
 # alias lof='cd /Users/mitch/Documents/Code/Python/LOFUpload; python3 main.py'
-alias ga='cd ~/Documents/code/python/MidiRoute' # most used shortcut
+alias ga='cd ~/Documents/code/Teensy/Looper01' # most used shortcut
 alias gc='cd ~/Documents/code/'
 alias go='cd'
 

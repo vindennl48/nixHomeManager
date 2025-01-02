@@ -2,8 +2,20 @@
   "languageserver": {
     "ccls": {
       "command": "ccls",
-      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
-      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+      "filetypes": [
+        "c",
+        "cc",
+        "cpp",
+        "c++",
+        "objc",
+        "objcpp"
+      ],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".git/",
+        ".hg/"
+      ],
       "initializationOptions": {
         "cache": {
           "directory": "/tmp/ccls"
@@ -19,5 +31,10 @@
     "--logpath",
     "~/.cache/sumneko_lua/log"
   ],
-  "sumneko-lua.serverDir": "/run/current-system/sw/share/lua-language-server"
+  "sumneko-lua.serverDir": "/run/current-system/sw/share/lua-language-server",
+  "dependencies": {
+    "coc-json": ">=1.9.2",
+    "coc-pyright": ">=1.1.390",
+    "coc-sumneko-lua": ">=0.0.42"
+  }
 }

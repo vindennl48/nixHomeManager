@@ -49,7 +49,7 @@ require("bufresize").setup({
 -- cmd("autocmd! Filetype h,c,cpp noremap<buffer> <leader>t :Ouroboros<CR>")
 
 -- Treesitter
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
   ensure_installed = {
     "c", "vim", "vimdoc", "query", "python",
     "bash", "cmake", "comment", "cpp", "css", "csv",
