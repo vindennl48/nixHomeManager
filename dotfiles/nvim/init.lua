@@ -195,7 +195,12 @@ set.shiftwidth = 2
 set.expandtab = true
 set.smartindent = true -- autoindenting
 
+-- Word Wrap Settings
 set.wrap = false -- wordwrap
+set.textwidth = 80
+set.wrapmargin = 0
+vim.o.formatoptions = vim.o.formatoptions .. 't'
+set.linebreak = true -- (optional - breaks by word rather than character)
 
 -- stop backups, can have some issues
 set.swapfile = false
